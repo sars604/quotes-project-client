@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Quotable</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,91 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Quotable</h1>
+      <nav>
+        <button type="button" class="btn btn-primary submit" data-toggle="modal" data-target="#signupModalCenter">
+          Sign Up</button><button type="button" class="btn btn-primary submit" data-toggle="modal" data-target="#signinModalCenter">
+            Sign In</button>
+        <button type="button" class="btn btn-primary submit" data-toggle="modal" data-target="#passwordModalCenter">
+          Change Password</button><button id="sign-out" class="submit sign-out" type="button">Sign Out</button>
+</nav>
+
+<h3 id='user-message'></h3>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="signupModalLongTitle">Sign Up</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+<form id="sign-up-form">
+  <input name="credentials[email]" type="text" placeholder="Email"><br>
+  <input name="credentials[password]" type="password" placeholder="Password"><br>
+  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="submit" class="btn btn-primary submit">Submit</button>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Sign In Modal -->
+<div class="modal fade" id="signinModalCenter" tabindex="-1" role="dialog" aria-labelledby="signinModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="signinModalLongTitle">Sign In</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+<form id="sign-in-form">
+  <input type="text" name="credentials[email]" placeholder="Email">
+  <input type="password" name="credentials[password]" placeholder="Password">
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="submit" class="btn btn-primary submit">Submit</button>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+
+      <!-- Change Password Modal -->
+<div class="modal fade" id="passwordModalCenter" tabindex="-1" role="dialog" aria-labelledby="passwordModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="passwordModalLongTitle">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    <form id="change-password-form">
+      <input type="password" name="passwords[old]" placeholder="Old Password">
+      <input type="password" name="passwords[new]" placeholder="New Password">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary submit">Save changes</button>
+      </div>
+    </form>
+      </div>
+
+    </div>
+  </div>
+</div>
     </body>
 </html>
