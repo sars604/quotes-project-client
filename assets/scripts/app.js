@@ -6,6 +6,8 @@ const events = require('./events')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+$('#change-password').hide()
+$('#sign-out').hide()
 
 $(() => {
   // user sign up
@@ -17,7 +19,7 @@ $(() => {
   $('#signinModalCenter').on('hidden.bs.modal', function () {
     $('#sign-in-form').trigger('reset')
   })
-  $('#sign-in').on('submit', events.onSignIn)
+  $('#sign-in-form').on('submit', events.onSignIn)
   // user change password
   $('#passwordModalCenter').on('hidden.bs.modal', function () {
     $('#change-password-form').trigger('reset')
