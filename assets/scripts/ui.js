@@ -66,12 +66,6 @@ const onCreateQuoteFailure = function (response) {
 
 const onGetQuotesSuccess = function (response) {
   store.quotes = response.quotes
-  // let quotesDisplay
-  // store.quotes.forEach(quote => {
-  //   quotesDisplay = (`<p>"${quote.text}"<br>&mdash; <em>${quote.cite}</em></p>`)
-  //   console.log(quotesDisplay)
-  //   $('#user-message').append(quotesDisplay)
-  // })
   console.log(response.quotes)
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
   $('#user-message').html(showQuotesHtml)
