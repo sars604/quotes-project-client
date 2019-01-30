@@ -44,10 +44,20 @@ const create = function (data) {
   return $.ajax({
     url: config.apiUrl + '/quotes',
     method: 'POST',
+    data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: data
+    }
+  })
+}
+
+const index = function () {
+  return $.ajax({
+    url: config.apiUrl + '/quotes',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -56,5 +66,6 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  create
+  create,
+  index
 }

@@ -53,10 +53,21 @@ const onCreateQuote = function (event) {
     .catch(ui.onCreateQuoteFailure)
 }
 
+// Get Index of Quotes
+const onGetQuotes = function () {
+  // make API call for index of quotes
+  api.index()
+  // when API call is successful
+    .then(ui.onGetQuotesSuccess)
+  // when API call fails
+    .catch(ui.onGetQuotesFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
-  onCreateQuote
+  onCreateQuote,
+  onGetQuotes
 }

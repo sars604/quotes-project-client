@@ -29,4 +29,6 @@ $(() => {
   $('#sign-out').on('click', events.onSignOut)
   // create a new quote
   $('#create-quote').on('submit', events.onCreateQuote)
+  // get index of quotes
+  $('#quotes-index').on('click', events.onGetQuotes)
 })

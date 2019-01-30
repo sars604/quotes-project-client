@@ -1,0 +1,9 @@
+{{#each quotes as |quote|}}
+  {{log quote}}
+
+  <section class="quote-info" data-id="{{quote.id}}">
+    <p>{{quote.text}}</p>
+    <p> &mdash; <em>{{quote.cite}}</em></p>
+  </section>
+
+{{/each}}

@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./store')
+const showQuotesTemplate = require('./templates/helpers/quote-listing.handlebars')
 
 const onSignUpSuccess = (responseData) => {
   $('#signupModalCenter').modal('toggle')
@@ -63,6 +64,26 @@ const onCreateQuoteFailure = function (response) {
   $('#user-message').css('color', 'red')
 }
 
+const onGetQuotesSuccess = function (response) {
+  store.quotes = response.quotes
+  // let quotesDisplay
+  // store.quotes.forEach(quote => {
+  //   quotesDisplay = (`<p>"${quote.text}"<br>&mdash; <em>${quote.cite}</em></p>`)
+  //   console.log(quotesDisplay)
+  //   $('#user-message').append(quotesDisplay)
+  // })
+  console.log(response.quotes)
+  const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
+  $('#user-message').html(showQuotesHtml)
+
+  // console.log(gameNum)
+}
+
+const onGetQuotesFailure = function () {
+  $('#user-message').html('Can not grab list of quotes, please try again')
+  $('#user-message').css('color', 'red')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -73,5 +94,7 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onCreateQuoteSuccess,
-  onCreateQuoteFailure
+  onCreateQuoteFailure,
+  onGetQuotesSuccess,
+  onGetQuotesFailure
 }
