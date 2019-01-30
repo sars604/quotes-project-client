@@ -27,4 +27,6 @@ $(() => {
   $('#change-password-form').on('submit', events.onChangePassword)
   // user sign out
   $('#sign-out').on('click', events.onSignOut)
+  // create a new quote
+  $('#create-quote').on('submit', events.onCreateQuote)
 })

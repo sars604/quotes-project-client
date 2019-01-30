@@ -53,6 +53,16 @@ const onChangePasswordFailure = () => {
   $('#user-message').css('color', 'red')
 }
 
+const onCreateQuoteSuccess = function (data) {
+  $('#user-message').text('Quote successfully created')
+  $('#user-message').css('color', '#69BF44')
+}
+
+const onCreateQuoteFailure = function (response) {
+  $('#user-message').text('Error on creating example')
+  $('#user-message').css('color', 'red')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -61,5 +71,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure
+  onChangePasswordFailure,
+  onCreateQuoteSuccess,
+  onCreateQuoteFailure
 }

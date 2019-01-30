@@ -38,9 +38,23 @@ const changePassword = (formData) => {
     data: formData
   })
 }
+
+const create = function (data) {
+  data.quote.user_id = store.user.id
+  return $.ajax({
+    url: config.apiUrl + '/quotes',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  create
 }

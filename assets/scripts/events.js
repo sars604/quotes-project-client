@@ -1,7 +1,7 @@
 const api = require('./api')
 const getFormFields = require('../../lib/get-form-fields.js')
 const ui = require('./ui')
-// const store = require('./store')
+const store = require('./store')
 
 // User sign up
 const onSignUp = (event) => {
@@ -38,15 +38,25 @@ const onSignOut = (event) => {
 const onChangePassword = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
+  console.log(formData)
   api.changePassword(formData)
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
   $('#change-password-form').trigger('reset')
 }
 
+const onCreateQuote = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.create(data)
+    .then(ui.onCreateQuoteSuccess)
+    .catch(ui.onCreateQuoteFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  onCreateQuote
 }
