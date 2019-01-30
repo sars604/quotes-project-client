@@ -69,12 +69,15 @@ const onGetQuotesSuccess = function (response) {
   console.log(response.quotes)
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
   $('#user-message').html(showQuotesHtml)
-
-  // console.log(gameNum)
 }
 
 const onGetQuotesFailure = function () {
   $('#user-message').html('Can not grab list of quotes, please try again')
+  $('#user-message').css('color', 'red')
+}
+
+const onDeleteQuoteFailure = function () {
+  $('#user-message').html('Can\'t delete quote!')
   $('#user-message').css('color', 'red')
 }
 
@@ -90,5 +93,6 @@ module.exports = {
   onCreateQuoteSuccess,
   onCreateQuoteFailure,
   onGetQuotesSuccess,
-  onGetQuotesFailure
+  onGetQuotesFailure,
+  onDeleteQuoteFailure
 }

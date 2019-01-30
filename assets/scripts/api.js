@@ -61,11 +61,22 @@ const index = function () {
   })
 }
 
+const destroy = function (quoteID) {
+  return $.ajax({
+    url: config.apiUrl + '/quotes/' + quoteID,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   create,
-  index
+  index,
+  destroy
 }

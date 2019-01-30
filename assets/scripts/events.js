@@ -63,11 +63,20 @@ const onGetQuotes = function () {
     .catch(ui.onGetQuotesFailure)
 }
 
+const onDeleteQuote = (event) => {
+  event.preventDefault()
+  const target = $(event.target).closest('section').data('id')
+  api.destroy(target)
+    .then(() => onGetQuotes(event))
+    .catch(ui.onDeleteQuoteFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
   onCreateQuote,
-  onGetQuotes
+  onGetQuotes,
+  onDeleteQuote
 }

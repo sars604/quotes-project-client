@@ -31,4 +31,6 @@ $(() => {
   $('#create-quote').on('submit', events.onCreateQuote)
   // get index of quotes
   $('#quotes-index').on('click', events.onGetQuotes)
+  // delete a quote
+  $('#user-message').on('click', events.onDeleteQuote)
 })

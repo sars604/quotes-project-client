@@ -35,9 +35,9 @@
 </div>
 <div class="modal-body">
 <form id="sign-up-form">
-  <input name="credentials[email]" type="text" placeholder="Email"><br>
-  <input name="credentials[password]" type="password" placeholder="Password"><br>
-  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+  <input name="credentials[email]" type="text" placeholder="Email" class="form-control"><br>
+  <input name="credentials[password]" type="password" placeholder="Password" class="form-control"><br>
+  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control">
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
   <button type="submit" class="btn btn-primary submit">Submit</button>
@@ -61,8 +61,8 @@
 </div>
 <div class="modal-body">
 <form id="sign-in-form">
-  <input type="text" name="credentials[email]" placeholder="Email">
-  <input type="password" name="credentials[password]" placeholder="Password">
+  <input type="text" name="credentials[email]" placeholder="Email" class="form-control">
+  <input type="password" name="credentials[password]" placeholder="Password" class="form-control">
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
   <button type="submit" class="btn btn-primary submit">Submit</button>
@@ -86,8 +86,8 @@
       </div>
       <div class="modal-body">
     <form id="change-password-form">
-      <input type="password" name="passwords[old]" placeholder="Old Password">
-      <input type="password" name="passwords[new]" placeholder="New Password">
+      <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control">
+      <input type="password" name="passwords[new]" placeholder="New Password" class="form-control">
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary submit">Save changes</button>
@@ -105,6 +105,31 @@
   <input type="text" name="quote[cite]" placeholder="Quote Cite">
   <button type="submit" class="create-quote submit">Save Quote!</button>
 </form>
+</div>
+
+<!-- Update Quote Modal -->
+<div class="modal fade" id="updateQuoteModalCenter" tabindex="-1" role="dialog" aria-labelledby="updateQuoteModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="updateQuoteModalLongTitle">Update Quote</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+<form id="update-quote-form">
+  <input name="quote[text]" type="text" placeholder="Quote Text" class="form-control"><br>
+  <input name="quote[cite]" type="text" placeholder="Quote Cite" class="form-control"><br>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="submit" class="btn btn-primary submit">Submit</button>
+</div>
+</form>
+</div>
+
+</div>
+</div>
 </div>
 
     </body>

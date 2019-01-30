@@ -2,8 +2,11 @@
   {{log quote}}
 
   <section class="quote-info" data-id="{{quote.id}}">
-    <p>{{quote.text}}</p>
+    <p>"{{quote.text}}"</p>
     <p> &mdash; <em>{{quote.cite}}</em></p>
+    <p><button id="update-quote" type="button" class="btn btn-primary submit" data-toggle="modal" data-target="#updateQuoteModalCenter">
+      Edit</button><button id="delete-quote" type="button" class="btn btn-primary submit">Delete</button></p>
+
   </section>
 
 {{/each}}
