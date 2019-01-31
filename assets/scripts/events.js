@@ -82,6 +82,17 @@ const onUpdateQuote = (event) => {
     .catch(ui.onUpdateQuoteFailure)
 }
 
+// Get Inspirational Quote
+const onGetRandomQuote = function () {
+  const randomID = Math.floor((Math.random() * 84) + 1)
+  // make API call for index of quotes
+  api.show(randomID)
+  // when API call is successful
+    .then(ui.onGetRandomQuoteSuccess)
+  // when API call fails
+    .catch(ui.onGetRandomQuoteFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -90,5 +101,6 @@ module.exports = {
   onCreateQuote,
   onGetQuotes,
   onDeleteQuote,
-  onUpdateQuote
+  onUpdateQuote,
+  onGetRandomQuote
 }

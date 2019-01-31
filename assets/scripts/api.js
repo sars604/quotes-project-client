@@ -83,6 +83,13 @@ const destroy = function (quoteID) {
   })
 }
 
+const show = function (randomID) {
+  return $.ajax({
+    url: config.apiUrl + '/random_quotes/' + randomID,
+    method: 'GET'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -91,5 +98,6 @@ module.exports = {
   create,
   index,
   destroy,
-  update
+  update,
+  show
 }

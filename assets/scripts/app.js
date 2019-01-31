@@ -41,4 +41,6 @@ $(() => {
     $('.update-quote-form').trigger('reset')
   })
   $('#quotes-display').on('submit', '.update-quote-form', events.onUpdateQuote)
+  // display inspirational quote
+  $('#quote-show').on('click', events.onGetRandomQuote)
 })

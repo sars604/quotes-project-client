@@ -100,6 +100,20 @@ const onUpdateQuoteFailure = function () {
   $('#user-message').css('color', 'red')
 }
 
+const onGetRandomQuoteSuccess = function (response) {
+  $('#user-message').text('Here is your inspiration!')
+  $('#user-message').css('color', '#69BF44')
+  store.randomQuote = response.random_quote
+  console.log(store.randomQuote)
+  $('#daily-inspiration').html(store.randomQuote.rand_text)
+  $('#daily-inspiration').append(` &mdash; <em>${store.randomQuote.rand_cite}</em>`)
+}
+
+const onGetRandomQuoteFailure = function () {
+  $('#user-message').html('Can\t give inspiration, don\t give up!')
+  $('#user-message').css('color', 'red')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -115,5 +129,7 @@ module.exports = {
   onGetQuotesFailure,
   onDeleteQuoteFailure,
   onUpdateQuoteSuccess,
-  onUpdateQuoteFailure
+  onUpdateQuoteFailure,
+  onGetRandomQuoteSuccess,
+  onGetRandomQuoteFailure
 }
