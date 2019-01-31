@@ -51,6 +51,7 @@ const onCreateQuote = function (event) {
   api.create(data)
     .then(ui.onCreateQuoteSuccess)
     .catch(ui.onCreateQuoteFailure)
+  $('form').trigger('reset')
 }
 
 // Get Index of Quotes
@@ -71,6 +72,16 @@ const onDeleteQuote = (event) => {
     .catch(ui.onDeleteQuoteFailure)
 }
 
+const onUpdateQuote = (event) => {
+  event.preventDefault()
+  const target = $(event.target).closest('section').data('id')
+  store.modalId = target
+  const data = getFormFields(event.target)
+  api.update(data, target)
+    .then(ui.onUpdateQuoteSuccess)
+    .catch(ui.onUpdateQuoteFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -78,5 +89,6 @@ module.exports = {
   onChangePassword,
   onCreateQuote,
   onGetQuotes,
-  onDeleteQuote
+  onDeleteQuote,
+  onUpdateQuote
 }

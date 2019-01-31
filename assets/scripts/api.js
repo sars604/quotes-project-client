@@ -61,6 +61,18 @@ const index = function () {
   })
 }
 
+const update = function (data, quoteID) {
+  data.quote.user_id = store.user.id
+  return $.ajax({
+    url: config.apiUrl + '/quotes/' + quoteID,
+    method: 'PATCH',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const destroy = function (quoteID) {
   return $.ajax({
     url: config.apiUrl + '/quotes/' + quoteID,
@@ -78,5 +90,6 @@ module.exports = {
   changePassword,
   create,
   index,
-  destroy
+  destroy,
+  update
 }

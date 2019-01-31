@@ -22,7 +22,7 @@ const onSignInSuccess = (responseData) => {
   $('#user-message').css('color', '#69BF44')
   store.user = responseData.user
   $('#sign-in, #sign-up').hide()
-  $('#change-password, #sign-out').show()
+  $('#change-password, #sign-out, .create, #quotes-index').show()
 }
 
 const onSignInFailure = () => {
@@ -66,7 +66,6 @@ const onCreateQuoteFailure = function (response) {
 
 const onGetQuotesSuccess = function (response) {
   store.quotes = response.quotes
-  console.log(response.quotes)
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
   $('#user-message').html(showQuotesHtml)
 }
@@ -78,6 +77,17 @@ const onGetQuotesFailure = function () {
 
 const onDeleteQuoteFailure = function () {
   $('#user-message').html('Can\'t delete quote!')
+  $('#user-message').css('color', 'red')
+}
+
+const onUpdateQuoteSuccess = function (response) {
+  store.quotes = response.quotes
+  const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
+  $('#user-message').html(showQuotesHtml)
+}
+
+const onUpdateQuoteFailure = function () {
+  $('#user-message').html('Can\'t update quote!')
   $('#user-message').css('color', 'red')
 }
 
@@ -94,5 +104,7 @@ module.exports = {
   onCreateQuoteFailure,
   onGetQuotesSuccess,
   onGetQuotesFailure,
-  onDeleteQuoteFailure
+  onDeleteQuoteFailure,
+  onUpdateQuoteSuccess,
+  onUpdateQuoteFailure
 }

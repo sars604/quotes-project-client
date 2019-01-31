@@ -1,5 +1,6 @@
 'use strict'
 const events = require('./events')
+const store = require('./store')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -8,6 +9,8 @@ const events = require('./events')
 // require('./example')
 $('#change-password').hide()
 $('#sign-out').hide()
+$('.create').hide()
+$('#quotes-index').hide()
 
 $(() => {
   // user sign up
@@ -32,5 +35,10 @@ $(() => {
   // get index of quotes
   $('#quotes-index').on('click', events.onGetQuotes)
   // delete a quote
-  $('#user-message').on('click', events.onDeleteQuote)
+  $('#user-message').on('click', '.remove', events.onDeleteQuote)
+  // update a quote
+  // $('#update-modal').on('hidden.bs.modal', function () {
+  //   $('.update-quote-form').trigger('reset')
+  // })
+  $('#user-message').on('submit', '.update-quote-form', events.onUpdateQuote)
 })
