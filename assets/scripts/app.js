@@ -37,8 +37,8 @@ $(() => {
   // delete a quote
   $('#user-message').on('click', '.remove', events.onDeleteQuote)
   // update a quote
-  // $('#update-modal').on('hidden.bs.modal', function () {
-  //   $('.update-quote-form').trigger('reset')
-  // })
-  $('#user-message').on('submit', '.update-quote-form', events.onUpdateQuote)
+  $('.modal').on('hidden.bs.modal', function () {
+    $('.update-quote-form').trigger('reset')
+  })
+  $('section').on('submit', '.update-quote-form', events.onUpdateQuote)
 })

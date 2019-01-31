@@ -35,7 +35,7 @@ const onSignOutSuccess = () => {
   $('#user-message').text(`Successfully signed out!`)
   $('#user-message').css('color', '#69BF44')
   store.user = null
-  $('#sign-out, #change-password').hide()
+  $('#sign-out, #change-password, .create, #quotes-index').hide()
   $('#sign-in, #sign-up').show()
 }
 const onSignOutFailure = () => {
