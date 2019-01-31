@@ -57,21 +57,26 @@ const onChangePasswordFailure = () => {
 const onCreateQuoteSuccess = function (data) {
   $('#user-message').text('Quote successfully created')
   $('#user-message').css('color', '#69BF44')
+  store.quotes = data.quotes
+  const showQuotesHtml = showQuotesTemplate({ quotes: data.quotes })
+  $('#quotes-display').html(showQuotesHtml)
 }
 
 const onCreateQuoteFailure = function (response) {
-  $('#user-message').text('Error on creating example')
+  $('#user-message').text('Error on creating quote, try again!')
   $('#user-message').css('color', 'red')
 }
 
 const onGetQuotesSuccess = function (response) {
+  $('#user-message').text('Here are your quotes, add a new one!')
+  $('#user-message').css('color', '#69BF44')
   store.quotes = response.quotes
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
-  $('#user-message').html(showQuotesHtml)
+  $('#quotes-display').html(showQuotesHtml)
 }
 
 const onGetQuotesFailure = function () {
-  $('#user-message').html('Can not grab list of quotes, please try again')
+  $('#user-message').html('Can\t find quotes, please try again')
   $('#user-message').css('color', 'red')
 }
 
@@ -84,7 +89,7 @@ const onUpdateQuoteSuccess = function (response) {
   store.quotes = response.quotes
   $('.update-modal').modal('hide')
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
-  $('#user-message').html(showQuotesHtml)
+  $('#quotes-display').html(showQuotesHtml)
   $('#user-message').text(`Successfully updated quote!`)
   $('#user-message').css('color', '#69BF44')
   $('.modal-backdrop').remove()

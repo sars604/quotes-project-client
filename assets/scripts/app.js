@@ -35,10 +35,10 @@ $(() => {
   // get index of quotes
   $('#quotes-index').on('click', events.onGetQuotes)
   // delete a quote
-  $('#user-message').on('click', '.remove', events.onDeleteQuote)
+  $('#quotes-display').on('click', '.remove', events.onDeleteQuote)
   // update a quote
   $('body').on('hide.bs.modal', '.update-modal', function () {
     $('.update-quote-form').trigger('reset')
   })
-  $('#user-message').on('submit', '.update-quote-form', events.onUpdateQuote)
+  $('#quotes-display').on('submit', '.update-quote-form', events.onUpdateQuote)
 })
