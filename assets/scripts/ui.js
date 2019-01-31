@@ -82,8 +82,12 @@ const onDeleteQuoteFailure = function () {
 
 const onUpdateQuoteSuccess = function (response) {
   store.quotes = response.quotes
+  $('.update-modal').modal('hide')
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
   $('#user-message').html(showQuotesHtml)
+  $('#user-message').text(`Successfully updated quote!`)
+  $('#user-message').css('color', '#69BF44')
+  $('.modal-backdrop').remove()
 }
 
 const onUpdateQuoteFailure = function () {

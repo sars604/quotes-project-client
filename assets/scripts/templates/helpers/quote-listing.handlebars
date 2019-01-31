@@ -5,14 +5,14 @@
     <p>"{{quote.text}}"</p>
     <p> &mdash; <em>{{quote.cite}}</em></p>
     <p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="false" data-target="#modal-{{quote.id}}">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{{quote.id}}">
         Edit
       </button>
       <button id="delete-quote" type="button" class="btn btn-primary submit remove">Delete</button></p>
 
 
 <!-- Update Quote Modal -->
-<div class="modal fade" id="modal-{{quote.id}}" tabindex="-1" role="dialog" aria-labelledby="updateQuoteModalCenterTitle" aria-hidden="true">
+<div data-backdrop="true" class="modal fade update-modal" id="modal-{{quote.id}}" tabindex="-1" role="dialog" aria-labelledby="updateQuoteModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">

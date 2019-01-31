@@ -1,6 +1,6 @@
 'use strict'
 const events = require('./events')
-const store = require('./store')
+// const store = require('./store')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -37,8 +37,8 @@ $(() => {
   // delete a quote
   $('#user-message').on('click', '.remove', events.onDeleteQuote)
   // update a quote
-  $('.modal').on('hidden.bs.modal', function () {
+  $('body').on('hide.bs.modal', '.update-modal', function () {
     $('.update-quote-form').trigger('reset')
   })
-  $('section').on('submit', '.update-quote-form', events.onUpdateQuote)
+  $('#user-message').on('submit', '.update-quote-form', events.onUpdateQuote)
 })

@@ -3,3 +3,26 @@
 .quote-info {
   color: black;
 }
+
+nav {
+  padding: 40px 12px;
+  border-bottom: 1px solid black;
+}
+
+nav h1 {
+  float: left;
+}
+
+nav button {
+  float: right;
+}
+
+#user-message {
+  clear: both;
+  float: left;
+}
+
+.body {
+  clear: both;
+  float: left;
+}

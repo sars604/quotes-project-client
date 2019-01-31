@@ -51,7 +51,7 @@ const onCreateQuote = function (event) {
   api.create(data)
     .then(ui.onCreateQuoteSuccess)
     .catch(ui.onCreateQuoteFailure)
-  $('form').trigger('reset')
+  $('#create-quote').trigger('reset')
 }
 
 // Get Index of Quotes
