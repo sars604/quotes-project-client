@@ -8,47 +8,104 @@ body {
   font-size: 26px;
 }
 
-.quote-info {
-  color: black;
-}
-
-#user-message, #daily-inspiration {
-  background-color: rgba(255,255,255,.5);
+#user-message, #daily-inspiration, #quotes-display, .card {
+  background-color: rgba(255,255,255,.70);
   text-align: center;
   float: none;
 }
 
 .inspiration {
   float: none;
-  margin: 0 auto;
+  margin: 30px auto 0;
   text-align: center;
 }
 
-nav h1 {
+h1 {
   float: left;
   font-family: 'Fredericka the Great', cursive;
   font-size: 100px;
   color: #fff;
 }
 
-#daily-inspiration {
+h1.open-screen {
+  text-align: center;
+  float: none;
+  margin: 0 auto;
+  color: grey;
+  font-size: 150px;
+}
+h4.open-screen {
+  text-align: center;
+  float: none;
+  margin: 0 auto;
+  color: grey;
+  font-size: 75px;
+}
+
+h4 {
+float: left;
+font-family: 'Fredericka the Great', cursive;
+font-size: 24px;
+color: #fff;
+clear: both;
+}
+
+#daily-inspiration, #quotes-display, .card {
   color: grey;
   border-radius: 20px;
   width: 800px;
   margin: 30px auto;
 }
 
-nav button {
-  float: right;
-  vertical-align: middle;
-  margin-top: 50px;
-  margin-right: 10px;
+#user-message {
+  width: 450px;
+  margin: 30px auto;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+h3 {
+  color: grey;
 }
 
 #quotes-display, #create{
   clear: both;
 }
 
+.quote-info {
+  line-height:0.9em;
+  font-size: 22px;
+  padding: 20px 0;
+}
+
+.modal {
+  overflow-y:auto;
+}
+
 .body {
   clear: both;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  display: flex;
+  align-items: baseline;
+}
+
+.nav h1 {
+  display: flex;
+}
+
+.nav-item {
+  display: flex;
+  margin: 0 0 0 10px;
 }

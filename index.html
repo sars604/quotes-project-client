@@ -14,27 +14,61 @@
 </head>
 
 <body class="container-fluid">
-  <nav>
-    <h1>“Quotable”</h1>
-    <button id="sign-up" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#signupModalCenter">
-      Sign Up</button><button id="sign-in" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#signinModalCenter">
-      Sign In</button>
-    <button id="change-password" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#passwordModalCenter">
-      Change Password</button><button id="sign-out" class="submit sign-out btn-info btn" type="button">Sign Out</button>
-  </nav>
-  <div class='body'>
-      <div id='user-message'></div>
-      <div class='inspiration'><button id='quote-show' class="quote-show submit btn-outline-info btn-lg btn">Get Inspired!</button></div>
-      <div id='daily-inspiration'></div>
-    <div class='index'><button id='quotes-index' class="quotes-index submit btn-info btn">See More Quotes!</button></div>
-    <div class="create">
-      <h3>Create your own Quote</h3>
-      <form id='create-quote'>
-        <input type="text" name="quote[text]" placeholder="Quote Text">
-        <input type="text" name="quote[cite]" placeholder="Quote Cite">
-        <button type="submit" class="create-quote submit btn-info btn">Save Quote!</button>
-      </form>
+  <ul class="nav">
+    <div class="nav-title"><h1>“Quotable”</h1>
     </div>
+
+    <div class='nav-items'>
+    <li class="nav-item">
+      <button id="sign-in" type="button" class="btn btn-info " data-toggle="modal" data-target="#signinModalCenter">
+      Sign In</button>
+    </li>
+    <li class="nav-item">
+      <button id="sign-up" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#signupModalCenter">
+        Sign Up</button>
+    </li>
+    <li class="nav-item">
+      <div class="create-button"><button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseCreateQuote" aria-expanded="false" aria-controls="collapseExample">
+        Create Quote
+      </button></div>
+    </li>
+    <li class="nav-item">
+      <div class='index'><button id='quotes-index' class="quotes-index submit btn-info btn">See More Quotes</button></div>
+    </li>
+    <li class="nav-item">
+      <button id="change-password" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#passwordModalCenter">
+        Change Password</button>
+    </li>
+    <li class="nav-item">
+      <button id="sign-out" class=" sign-out btn-info btn" type="button">Sign Out</button>
+    </li>
+  </div>
+  </ul>
+
+  <div class='body'>
+    <div id='user-message'></div>
+    <h1 class="open-screen">“Quotable”</h1>
+    <h4 class="open-screen"><em>Find inspiration, or write your own</em></h4>
+    <div class='inspiration'><button id='quote-show' class="quote-show submit btn-outline-info btn-lg btn">Get Inspired!</button></div>
+    <div id='daily-inspiration'></div>
+
+
+
+
+
+    <div class="collapse" id="collapseCreateQuote">
+      <div class="card card-body">
+        <div class="create">
+          <h3>Create your own Quote</h3>
+          <form id='create-quote'>
+            <input type="text" name="quote[text]" placeholder="Quote Text">
+            <input type="text" name="quote[cite]" placeholder="Quote Cite">
+            <button type="submit" class="create-quote submit btn-info btn">Save Quote!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
   </div>
   <div id='quotes-display'></div>
   <!-- Sign Up Modal -->
@@ -54,7 +88,7 @@
             <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control">
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+              <button type="submit" class="btn btn-info submit">Submit</button>
             </div>
           </form>
         </div>
@@ -79,7 +113,7 @@
             <input type="password" name="credentials[password]" placeholder="Password" class="form-control">
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+              <button type="submit" class="btn btn-info submit">Submit</button>
             </div>
           </form>
         </div>
@@ -104,7 +138,7 @@
             <input type="password" name="passwords[new]" placeholder="New Password" class="form-control">
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary submit">Save changes</button>
+              <button type="submit" class="btn btn-info submit">Save changes</button>
             </div>
           </form>
         </div>

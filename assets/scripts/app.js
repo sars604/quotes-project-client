@@ -9,8 +9,9 @@ const events = require('./events')
 // require('./example')
 $('#change-password').hide()
 $('#sign-out').hide()
-$('.create').hide()
+$('.create-button').hide()
 $('#quotes-index').hide()
+$('.nav-title').hide()
 
 $(() => {
   // user sign up

@@ -4,85 +4,112 @@ const showQuotesTemplate = require('./templates/helpers/quote-listing.handlebars
 
 const onSignUpSuccess = (responseData) => {
   $('#signupModalCenter').modal('toggle')
-  $('#user-message').text(`Successfully signed up as ${responseData.user.email}!`)
-  $('#user-message').css('color', '#69BF44')
+  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
+  Successfully signed up as ${responseData.user.email}!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
   $('#change-password').hide()
   $('#sign-in').show()
-  $('#sign-up').hide()
+  $('#sign-up, .create-button').hide()
 }
 const onSignUpFailure = () => {
   $('#signupModalCenter').modal('toggle')
-  $('#user-message').text('Error on signup, please try again!')
-  $('#user-message').css('color', 'red')
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Error on signup, please try again!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
 }
 
 const onSignInSuccess = (responseData) => {
   $('#signinModalCenter').modal('toggle')
-  $('#user-message').text(`Successfully signed in as ${responseData.user.email}!`)
-  $('#user-message').css('color', '#69BF44')
+  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
+  Successfully signed in as ${responseData.user.email}!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
   store.user = responseData.user
-  $('#sign-in, #sign-up').hide()
-  $('#change-password, #sign-out, .create, #quotes-index').show()
+  $('#sign-in, #sign-up, .open-screen').hide()
+  $('#change-password, #sign-out, .create-button, #quotes-index, .nav-title').show()
 }
 
 const onSignInFailure = () => {
   $('#signinModalCenter').modal('toggle')
-  $('#user-message').text('Error on sign in, please try again!')
-  $('#user-message').css('color', 'red')
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Error on signin, please try again!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
 }
 
 const onSignOutSuccess = () => {
-  $('#user-message').text(`Successfully signed out!`)
-  $('#user-message').css('color', '#69BF44')
+  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
+  Successfully signed out!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
   store.user = null
-  $('#sign-out, #change-password, .create, #quotes-index').hide()
-  $('#sign-in, #sign-up').show()
+  $('#sign-out, #change-password, .create-button, #quotes-index, .collapse, .nav-title').hide()
+  $('#sign-in, #sign-up, .open-screen').show()
+  $('#quotes-display').html('')
 }
 const onSignOutFailure = () => {
-  $('#user-message').text('Error on signing out, try again!')
-  $('#user-message').css('color', 'red')
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Error on signing out, try again!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
 }
 
 const onChangePasswordSuccess = () => {
+  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
+  Successfully changed password!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
   $('#passwordModalCenter').modal('toggle')
-  $('#user-message').text(`Successfully changed password!`)
-  $('#user-message').css('color', '#69BF44')
 }
 const onChangePasswordFailure = () => {
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Error on changing password, try again!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
   $('#passwordModalCenter').modal('toggle')
-  $('#user-message').text('Error on changing password, try again!')
-  $('#user-message').css('color', 'red')
 }
 
 const onCreateQuoteSuccess = function (data) {
-  $('#user-message').text('Quote successfully created')
-  $('#user-message').css('color', '#69BF44')
+  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
+  Quote successfully created!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
   store.quotes = data.quotes
   const showQuotesHtml = showQuotesTemplate({ quotes: data.quotes })
   $('#quotes-display').html(showQuotesHtml)
 }
 
 const onCreateQuoteFailure = function (response) {
-  $('#user-message').text('Error on creating quote, try again!')
-  $('#user-message').css('color', 'red')
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Error on creating quote, try again!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
 }
 
 const onGetQuotesSuccess = function (response) {
-  $('#user-message').text('Here are your quotes, add a new one!')
-  $('#user-message').css('color', '#69BF44')
+  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
+  Add your own quote!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
   store.quotes = response.quotes
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
   $('#quotes-display').html(showQuotesHtml)
 }
 
 const onGetQuotesFailure = function () {
-  $('#user-message').html('Can\t find quotes, please try again')
-  $('#user-message').css('color', 'red')
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Can\t find quotes, please try again<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
 }
 
 const onDeleteQuoteFailure = function () {
-  $('#user-message').html('Can\'t delete quote!')
-  $('#user-message').css('color', 'red')
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Can\t delete quote!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
 }
 
 const onUpdateQuoteSuccess = function (response) {
@@ -90,14 +117,18 @@ const onUpdateQuoteSuccess = function (response) {
   $('.update-modal').modal('hide')
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
   $('#quotes-display').html(showQuotesHtml)
-  $('#user-message').text(`Successfully updated quote!`)
-  $('#user-message').css('color', '#69BF44')
+  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
+  Successfully updated quote!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
   $('.modal-backdrop').remove()
 }
 
 const onUpdateQuoteFailure = function () {
-  $('#user-message').html('Can\'t update quote!')
-  $('#user-message').css('color', 'red')
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Can not update quote, please include quote and cite!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
 }
 
 const onGetRandomQuoteSuccess = function (response) {
@@ -107,8 +138,10 @@ const onGetRandomQuoteSuccess = function (response) {
 }
 
 const onGetRandomQuoteFailure = function () {
-  $('#user-message').html('Can\t give inspiration, don\t give up!')
-  $('#user-message').css('color', 'red')
+  $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
+  Can not give inspiration, but do not give up!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button></div>`)
 }
 
 module.exports = {
