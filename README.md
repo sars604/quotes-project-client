@@ -14,7 +14,7 @@
 ## Wireframe and User Stories:
 
 Wireframe:
-![Imgur](https://i.imgur.com/fiAhDC4s.jpg)
+![Imgur](https://i.imgur.com/fiAhDC4l.jpg)
 
 * As a user, I would like to get an inspirational quote.
 * As a user, I would like to add a quote to my own list of quotes.
