@@ -4,7 +4,7 @@
 <head>
   <title>Quotable</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -13,26 +13,26 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-<body>
+<body class="container-fluid">
   <nav>
-    <h1>Quotable</h1>
-    <button id="sign-up" type="button" class="btn btn-primary submit" data-toggle="modal" data-target="#signupModalCenter">
-      Sign Up</button><button id="sign-in" type="button" class="btn btn-primary submit" data-toggle="modal" data-target="#signinModalCenter">
+    <h1>“Quotable”</h1>
+    <button id="sign-up" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#signupModalCenter">
+      Sign Up</button><button id="sign-in" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#signinModalCenter">
       Sign In</button>
-    <button id="change-password" type="button" class="btn btn-primary submit" data-toggle="modal" data-target="#passwordModalCenter">
-      Change Password</button><button id="sign-out" class="submit sign-out btn-primary btn" type="button">Sign Out</button>
+    <button id="change-password" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#passwordModalCenter">
+      Change Password</button><button id="sign-out" class="submit sign-out btn-info btn" type="button">Sign Out</button>
   </nav>
   <div class='body'>
       <div id='user-message'></div>
+      <div class='inspiration'><button id='quote-show' class="quote-show submit btn-outline-info btn-lg btn">Get Inspired!</button></div>
       <div id='daily-inspiration'></div>
-      <div class='inspiration'><button id='quote-show' class="quote-show submit btn-primary btn">Get Inspiration!</button></div>
-    <div class='index'><button id='quotes-index' class="quotes-index submit btn-primary btn">Quote Index</button></div>
+    <div class='index'><button id='quotes-index' class="quotes-index submit btn-info btn">See More Quotes!</button></div>
     <div class="create">
-      <h3>Create a Quote</h3>
+      <h3>Create your own Quote</h3>
       <form id='create-quote'>
         <input type="text" name="quote[text]" placeholder="Quote Text">
         <input type="text" name="quote[cite]" placeholder="Quote Cite">
-        <button type="submit" class="create-quote submit btn-primary btn">Save Quote!</button>
+        <button type="submit" class="create-quote submit btn-info btn">Save Quote!</button>
       </form>
     </div>
   </div>

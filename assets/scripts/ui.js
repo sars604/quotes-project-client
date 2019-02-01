@@ -101,12 +101,9 @@ const onUpdateQuoteFailure = function () {
 }
 
 const onGetRandomQuoteSuccess = function (response) {
-  $('#user-message').text('Here is your inspiration!')
-  $('#user-message').css('color', '#69BF44')
   store.randomQuote = response.random_quote
-  console.log(store.randomQuote)
-  $('#daily-inspiration').html(store.randomQuote.rand_text)
-  $('#daily-inspiration').append(` &mdash; <em>${store.randomQuote.rand_cite}</em>`)
+  $('#daily-inspiration').css('padding', '50px')
+  $('#daily-inspiration').html(`“${store.randomQuote.rand_text}”` + `<br>&mdash; <em>${store.randomQuote.rand_cite}</em>`)
 }
 
 const onGetRandomQuoteFailure = function () {

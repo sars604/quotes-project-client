@@ -1,28 +1,54 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-image: url('public/images/beach-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Assistant', sans-serif;
+  font-size: 26px;
+}
+
 .quote-info {
   color: black;
 }
 
-nav {
-  padding: 40px 12px;
-  border-bottom: 1px solid black;
+#user-message, #daily-inspiration {
+  background-color: rgba(255,255,255,.5);
+  text-align: center;
+  float: none;
+}
+
+.inspiration {
+  float: none;
+  margin: 0 auto;
+  text-align: center;
 }
 
 nav h1 {
   float: left;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 100px;
+  color: #fff;
+}
+
+#daily-inspiration {
+  color: grey;
+  border-radius: 20px;
+  width: 800px;
+  margin: 30px auto;
 }
 
 nav button {
   float: right;
+  vertical-align: middle;
+  margin-top: 50px;
+  margin-right: 10px;
 }
 
 #quotes-display, #create{
   clear: both;
-  float: left;
 }
 
 .body {
   clear: both;
-  float: left;
 }
