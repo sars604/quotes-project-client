@@ -12,6 +12,7 @@ $('#sign-out').hide()
 $('.create-button').hide()
 $('#quotes-index').hide()
 $('.nav-title').hide()
+$('.create').hide()
 
 $(() => {
   // user sign up
@@ -33,6 +34,12 @@ $(() => {
   $('#sign-out').on('click', events.onSignOut)
   // create a new quote
   $('#create-quote').on('submit', events.onCreateQuote)
+  // $('.create-button').on('click', function () {
+  //   $('.collapse').toggle()
+  // })
+  $('#create-button').on('click', function () {
+    $('.create').toggle()
+  })
   // get index of quotes
   $('#quotes-index').on('click', events.onGetQuotes)
   // delete a quote

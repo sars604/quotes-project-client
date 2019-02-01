@@ -20,12 +20,12 @@
 
     <div class='nav-items'>
     <li class="nav-item">
-      <div class="create-button"><button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseCreateQuote" aria-expanded="false" aria-controls="collapseExample">
+      <div class="create-button"><button id="create-button" class="btn btn-info" data-target='.create' type="button">
         Create Quote
       </button></div>
     </li>
     <li class="nav-item">
-      <div class='index'><button id='quotes-index' class="quotes-index submit btn-info btn">See More Quotes</button></div>
+      <div class='index'><button id='quotes-index' class="quotes-index submit btn-info btn">See Your Quotes</button></div>
     </li>
     <li class="nav-item">
       <button id="change-password" type="button" class="btn btn-info submit" data-toggle="modal" data-target="#passwordModalCenter">
@@ -39,19 +39,6 @@
 
   <div class='body'>
     <div id='user-message'></div>
-    <h1 class="open-screen">“Quotable”</h1>
-    <h4 class="open-screen"><em>Find inspiration, or write your own</em></h4>
-    <div class='inspiration'><button id='quote-show' class="quote-show submit btn-outline-info btn-lg btn">Get Inspired!</button><button id="sign-in" type="button" class="btn btn-outline-info btn-lg " data-toggle="modal" data-target="#signinModalCenter">
-    Sign In</button><button id="sign-up" type="button" class="btn btn-outline-info submit btn-lg" data-toggle="modal" data-target="#signupModalCenter">
-      Sign Up</button></div>
-    <div id='daily-inspiration'></div>
-
-
-
-
-
-    <div class="collapse" id="collapseCreateQuote">
-      <div class="card card-body">
         <div class="create">
           <h3>Create your own Quote</h3>
           <form id='create-quote'>
@@ -60,8 +47,12 @@
             <button type="submit" class="create-quote submit btn-info btn">Save Quote!</button>
           </form>
         </div>
-      </div>
-    </div>
+    <h1 class="open-screen">“Quotable”</h1>
+    <h4 class="open-screen"><em>Find inspiration, or write your own</em></h4>
+    <div class='inspiration'><button id='quote-show' class="quote-show submit btn-outline-info btn-lg btn">Get Inspired!</button><button id="sign-in" type="button" class="btn btn-outline-info btn-lg " data-toggle="modal" data-target="#signinModalCenter">
+    Sign In</button><button id="sign-up" type="button" class="btn btn-outline-info submit btn-lg" data-toggle="modal" data-target="#signupModalCenter">
+      Sign Up</button></div>
+    <div id='daily-inspiration'></div>
 
   </div>
   <div id='quotes-display'></div>

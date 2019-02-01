@@ -45,7 +45,7 @@ const onSignOutSuccess = () => {
     <span aria-hidden="true">&times;</span>
   </button></div>`)
   store.user = null
-  $('#sign-out, #change-password, .create-button, #quotes-index, .collapse, .nav-title').hide()
+  $('#sign-out, #change-password, .create-button, #quotes-index, .create-, .nav-title').hide()
   $('#sign-in, #sign-up, .open-screen').show()
   $('#quotes-display').html('')
 }
