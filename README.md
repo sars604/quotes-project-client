@@ -9,11 +9,10 @@
 * ajax
 * Bootstrap
 * Sass
-* Utlized an API
+* Utilized an API
 
 ## Wireframe and User Stories:
 
-Wireframe:
 ![Imgur](https://i.imgur.com/fiAhDC4l.jpg)
 
 * As a user, I would like to get an inspirational quote.
