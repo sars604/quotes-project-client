@@ -11,6 +11,12 @@
 * Sass
 * Utilized an API
 
+
+## Link to Both Sites - Front-end Client and Back-end API:
+Front-end Client - (https://sars604.github.io/quotes-project-client/)
+Back-end API - (https://fathomless-basin-65781.herokuapp.com/)
+
+
 ## Wireframe and User Stories:
 
 ![Imgur](https://i.imgur.com/fiAhDC4l.jpg)
