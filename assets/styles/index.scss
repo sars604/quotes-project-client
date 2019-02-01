@@ -19,6 +19,9 @@ body {
   margin: 30px auto 0;
   text-align: center;
 }
+.inspiration button {
+    margin: 0 5px;
+}
 
 h1 {
   float: left;
@@ -79,7 +82,7 @@ h3 {
 }
 
 .modal {
-  overflow-y:auto;
+    overflow-y:scroll;
 }
 
 .body {

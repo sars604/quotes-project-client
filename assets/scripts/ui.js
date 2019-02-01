@@ -122,6 +122,7 @@ const onUpdateQuoteSuccess = function (response) {
     <span aria-hidden="true">&times;</span>
   </button></div>`)
   $('.modal-backdrop').remove()
+  $('body').removeClass('modal-open')
 }
 
 const onUpdateQuoteFailure = function () {
