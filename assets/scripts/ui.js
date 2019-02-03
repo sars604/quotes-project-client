@@ -15,7 +15,7 @@ const onSignUpSuccess = (responseData) => {
     $('.alert').fadeTo(500, 0).slideUp(500, function () {
       $(this).remove()
     })
-  }, 3000)
+  }, 4000)
 }
 const onSignUpFailure = () => {
   $('#signupModalCenter').modal('toggle')
@@ -38,7 +38,7 @@ const onSignInSuccess = (responseData) => {
     $('.alert').fadeTo(500, 0).slideUp(500, function () {
       $(this).remove()
     })
-  }, 3000)
+  }, 4000)
 }
 
 const onSignInFailure = () => {
@@ -62,7 +62,7 @@ const onSignOutSuccess = () => {
     $('.alert').fadeTo(500, 0).slideUp(500, function () {
       $(this).remove()
     })
-  }, 3000)
+  }, 4000)
 }
 const onSignOutFailure = () => {
   $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
@@ -81,7 +81,7 @@ const onChangePasswordSuccess = () => {
     $('.alert').fadeTo(500, 0).slideUp(500, function () {
       $(this).remove()
     })
-  }, 3000)
+  }, 4000)
 }
 const onChangePasswordFailure = () => {
   $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
@@ -103,7 +103,7 @@ const onCreateQuoteSuccess = function (data) {
     $('.alert').fadeTo(500, 0).slideUp(500, function () {
       $(this).remove()
     })
-  }, 3000)
+  }, 4000)
 }
 
 const onCreateQuoteFailure = function (response) {
@@ -114,23 +114,23 @@ const onCreateQuoteFailure = function (response) {
 }
 
 const onGetQuotesSuccess = function (response) {
-  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
-  View your saved quotes!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button></div>`)
   store.quotes = response.quotes
+  $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
+  View saved quotes, or create one to get started!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+      </button></div>`)
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
   $('#quotes-display').html(showQuotesHtml)
   window.setTimeout(function () {
     $('.alert').fadeTo(500, 0).slideUp(500, function () {
       $(this).remove()
     })
-  }, 3000)
+  }, 4000)
 }
 
 const onGetQuotesFailure = function () {
   $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
-  Can\t find quotes, please try again<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  Can not find quotes, please try again<button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button></div>`)
 }
@@ -157,7 +157,7 @@ const onUpdateQuoteSuccess = function (response) {
     $('.alert').fadeTo(500, 0).slideUp(500, function () {
       $(this).remove()
     })
-  }, 3000)
+  }, 4000)
 }
 
 const onUpdateQuoteFailure = function () {
