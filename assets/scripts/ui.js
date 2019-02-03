@@ -11,6 +11,11 @@ const onSignUpSuccess = (responseData) => {
   $('#change-password').hide()
   $('#sign-in').show()
   $('#sign-up, .create-button').hide()
+  window.setTimeout(function () {
+    $('.alert').fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove()
+    })
+  }, 3000)
 }
 const onSignUpFailure = () => {
   $('#signupModalCenter').modal('toggle')
@@ -29,6 +34,11 @@ const onSignInSuccess = (responseData) => {
   store.user = responseData.user
   $('#sign-in, #sign-up, .open-screen').hide()
   $('#change-password, #sign-out, .create-button, #quotes-index, .nav-title').show()
+  window.setTimeout(function () {
+    $('.alert').fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove()
+    })
+  }, 3000)
 }
 
 const onSignInFailure = () => {
@@ -45,9 +55,14 @@ const onSignOutSuccess = () => {
     <span aria-hidden="true">&times;</span>
   </button></div>`)
   store.user = null
-  $('#sign-out, #change-password, .create-button, #quotes-index, .create-, .nav-title').hide()
+  $('#sign-out, #change-password, .create-button, #quotes-index, .create, .nav-title').hide()
   $('#sign-in, #sign-up, .open-screen').show()
   $('#quotes-display').html('')
+  window.setTimeout(function () {
+    $('.alert').fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove()
+    })
+  }, 3000)
 }
 const onSignOutFailure = () => {
   $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
@@ -62,6 +77,11 @@ const onChangePasswordSuccess = () => {
     <span aria-hidden="true">&times;</span>
   </button></div>`)
   $('#passwordModalCenter').modal('toggle')
+  window.setTimeout(function () {
+    $('.alert').fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove()
+    })
+  }, 3000)
 }
 const onChangePasswordFailure = () => {
   $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
@@ -79,6 +99,11 @@ const onCreateQuoteSuccess = function (data) {
   store.quotes = data.quotes
   const showQuotesHtml = showQuotesTemplate({ quotes: data.quotes })
   $('#quotes-display').html(showQuotesHtml)
+  window.setTimeout(function () {
+    $('.alert').fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove()
+    })
+  }, 3000)
 }
 
 const onCreateQuoteFailure = function (response) {
@@ -90,12 +115,17 @@ const onCreateQuoteFailure = function (response) {
 
 const onGetQuotesSuccess = function (response) {
   $('#user-message').html(`<div class="alert alert-success alert-dissmissable fade show" role="alert">
-  Add your own quote!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  View your saved quotes!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button></div>`)
   store.quotes = response.quotes
   const showQuotesHtml = showQuotesTemplate({ quotes: response.quotes })
   $('#quotes-display').html(showQuotesHtml)
+  window.setTimeout(function () {
+    $('.alert').fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove()
+    })
+  }, 3000)
 }
 
 const onGetQuotesFailure = function () {
@@ -107,7 +137,7 @@ const onGetQuotesFailure = function () {
 
 const onDeleteQuoteFailure = function () {
   $('#user-message').html(`<div class="alert alert-danger alert-dissmissable fade show" role="alert">
-  Can\t delete quote!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  Can not delete quote!<button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button></div>`)
 }
@@ -123,6 +153,11 @@ const onUpdateQuoteSuccess = function (response) {
   </button></div>`)
   $('.modal-backdrop').remove()
   $('body').removeClass('modal-open')
+  window.setTimeout(function () {
+    $('.alert').fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove()
+    })
+  }, 3000)
 }
 
 const onUpdateQuoteFailure = function () {
